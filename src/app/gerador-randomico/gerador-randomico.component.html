@@ -1,0 +1,86 @@
+<div class="container-fluid">
+  <div class="row margin">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="row ">
+        <div class=" card card-block col-lg-6">
+          <div class="form-group">
+            <label for="qtd-iteracoes">Quantidade de Iterações</label>
+            <input [(ngModel)]="qtdIteracoes" name="qtd-iteracoes" type="text" class="form-control" id="vertice-inicial">
+          </div>
+          <div class="row">
+            <div class="  col-lg-12">
+              <button (click)="quadradoMeio()" type="button" class="botao btn btn-primary">Quadrado do Meio</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class=" col-lg-12">
+              <button (click)="congruentePotencia()" type="button" class=" botao btn btn-primary">Congruente Potências</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class=" col-lg-12">
+              <button (click)="congruenteAdaptacao()" type="button" class=" botao btn btn-primary">Congruente Adaptação</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class=" col-lg-12">
+              <button (click)="congruenteMultiplicativo()" type="button" class=" botao btn btn-primary">Congruente Multiplicativo</button>
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col-lg-12">
+              <button (click)="geradorFibonacci()" type="button" class=" botao btn btn-primary">Gerador Fibonnaci</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class=" col-lg-12">
+              <button (click)="multiplicativoImplementado(event)" type="button" class=" botao btn btn-primary">Multiplicativo Implementado</button>
+            </div>
+            </div>
+          <div class="row">
+            <div class=" col-lg-12">
+              <button (click)="chiQuadrado()" type="button" class=" botao btn btn-danger">Chi-Quadrado</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class=" col-lg-12">
+              <button (click)="geradorEstatistica()" type="button" class=" botao btn btn-danger">Estatística</button>
+            </div>
+          </div>
+        </div>
+        <div class="card card-block  col-lg-6">
+          <div class="form-group">
+            <label for="qtd-iteracoes">Geradores Aleatórios</label>
+            <label for="qtd-iteracoes">1 - Quadrado do Meio</label>
+            <label for="qtd-iteracoes">2 - Congruente Potencia</label>
+            <label for="qtd-iteracoes">3 - Congruente Adaptado</label>
+            <label for="qtd-iteracoes">4 - Congruente Multiplicativo</label>
+            <label for="qtd-iteracoes">5 - Gerador de Atraso Fibonacci</label>
+         <input [(ngModel)]="qtdIteracoes" name="qtd-iteracoes" type="text" class="form-control" id="vertice-inicial">
+          
+        </div>
+          <div class="row ">
+            <div class="col-lg-12">
+              <button (click)="aleatorioPoisson()" type="button" class=" botao btn btn-primary">Poisson Aleatório</button>
+            </div>
+            </div>
+          <div class="row ">
+            <div class="col-lg-12">
+              <button (click)="aleatorioTriangular()" type="button" class=" botao btn btn-primary">Triangular Aleatório</button>
+            </div>
+            </div>
+          <div class="row ">
+            <div class="col-lg-12">
+              <button (click)="aleatoriioUniforme()" type="button" class=" botao btn btn-primary">Uniforme Aleatório</button>
+            </div>
+            </div>
+          <div class="row ">
+            <div class="col-lg-12">
+              <button (click)="aleatorioNormal()" type="button" class=" botao btn btn-primary">Normal Aleatório</button>
+            </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  // <h1 class="text-center font-weight-bold align-middle ">{{resultado}}</h1>
