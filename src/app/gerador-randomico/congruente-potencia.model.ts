@@ -17,6 +17,7 @@ export class CongruentePotencia {
             this.numeros.push(this.x % 100 + 1);
             i--;
         } while (i > 0);
+        console.log(this.numeros);
         return this.numeros;
     }
 }

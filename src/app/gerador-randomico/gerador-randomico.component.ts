@@ -7,6 +7,10 @@ import { CongruenteMultiplicativo } from './congruente-multiplicativo.model';
 import { MultiplicativoImplementado } from './multiplicativo-implementado.model';
 import { Fibonacci } from './fibonacci.model';
 import { ChiQuadrado } from './chi-quadrado.model';
+import { Poisson } from './poisson.model';
+import { Triangular } from './triangular.model';
+import { Uniforme } from './uniforme.model';
+import { Normal } from './normal.model';
 
 @Component({
   selector: 'app-gerador-randomico',
@@ -16,7 +20,10 @@ import { ChiQuadrado } from './chi-quadrado.model';
 export class GeradorRandomicoComponent implements OnInit {
   public resultado: number = 0;
   public qtdIteracoes: number;
-  public numeros: Array<number>;
+  public numeros: Array<number>;//observados
+  public esperados: Array<number>
+
+
   public estatistica: Estatistica;
   public chi: ChiQuadrado;
 
@@ -28,65 +35,42 @@ export class GeradorRandomicoComponent implements OnInit {
 
 
 
-  public aleatorioPoisson(){
+  public poisson() {
     console.log("===================Gerador Aleatório Distribuição Poisson===================");
-    this.estatistica = new Estatistica();
-    this.estatistica.aleatorioPoisson();
+    let poisson: Poisson = new Poisson();
+
 
   }
 
-public aleatorioTriangular(){
+  public triangular() {
     console.log("===================Gerador Aleatório Distribuição Triangular===================");
-
+    let triangular: Triangular = new Triangular();
+    this.esperados = triangular.esperados(this.numeros);
+    this.chi = new ChiQuadrado(this.numeros, this.esperados);; 
 
   }
 
-public aleatorioUniforme(){
-     this.estatistica= new Array();
+  public uniforme() {
     console.log("===================Gerador Aleatório Distribuição Uniforme===================");
-
-    this.estatistica = Estat.rint(500, 1, 100);
-    console.log(this.estatistica);
-
+    let uniforme: Uniforme = new Uniforme();
+    this.esperados = new Array();
+    this.esperados = uniforme.esperados(this.numeros);
+    this.chi = new ChiQuadrado(this.numeros, this.esperados);
   }
 
-public aleatorioNormal(){
+  public normal() {
     console.log("===================Gerador Aleatório Distribuição Normal===================");
-
+    let normal: Normal = new Normal();
+    normal.esperados(this.numeros);
+    this.esperados = normal.esperados(this.numeros);
+    this.chi = new ChiQuadrado(this.numeros, this.esperados);; 
 
   }
 
-
-  public geradorEstatistica(x) {
-    console.log("===================Estatistica===================");
-    this.estatistica = new Estatistica(this.numeros);
-    // console.log(this.numeros);
-    //this.estatistica.executar();
-    switch(x){
-      case 1:
-
-      break;
-      case 2:
-
-
-      break;
-      case 3:
-
-
-      break;
-      case 4:
-
-
-
-      break;
-    }
-  }
 
   public chiQuadrado() {
     console.log("===================Chi-Quadrado===================");
-    this.chi = new ChiQuadrado(this.numeros);
-    // console.log(this.numeros);
-    this.chi.executar();
+      this.chi.executar();
   }
 
   public quadradoMeio(): void {
@@ -134,9 +118,9 @@ public aleatorioNormal(){
     let y: number = mouse.clientY;
     let multiplicativo: MultiplicativoImplementado = new MultiplicativoImplementado();
     this.numeros = multiplicativo.executar(this.qtdIteracoes, x, y);
-    
 
-    
+
+
     /*
         let xPos = x.clientX;     // Get the horizontal coordinate
         // let yPos: number = y.clientY();     // Get the vertical coordinate
@@ -146,7 +130,7 @@ public aleatorioNormal(){
         */
   }
 
- 
+
 
 
 }

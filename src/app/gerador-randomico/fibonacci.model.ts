@@ -22,6 +22,7 @@ export class Fibonacci {
             this.xAtual = this.xResult;
             i--;
         } while (i > 0);
+        console.log(this.numeros);
         return this.numeros;
     }
 }

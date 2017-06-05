@@ -13,9 +13,10 @@ export class QuadradoMeio {
                 this.x++;
             }
             this.numeros.push(this.x % 100 + 1);
-            console.log(this.x);
+            
             i--;
         } while (i > 0);
+        console.log(this.numeros);
         return this.numeros;
 
     }

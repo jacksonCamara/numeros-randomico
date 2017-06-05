@@ -31,7 +31,7 @@ export class MultiplicativoImplementado {
             i--;
         } while (i > 0);
 
-        
+        console.log(this.numeros);
         return this.numeros;
     }
 }

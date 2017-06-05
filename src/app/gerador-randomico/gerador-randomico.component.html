@@ -49,34 +49,25 @@
           </div>
         </div>
         <div class="card card-block  col-lg-6">
-          <div class="form-group">
-            <label for="qtd-iteracoes">Geradores Aleatórios</label>
-            <label for="qtd-iteracoes">1 - Quadrado do Meio</label>
-            <label for="qtd-iteracoes">2 - Congruente Potencia</label>
-            <label for="qtd-iteracoes">3 - Congruente Adaptado</label>
-            <label for="qtd-iteracoes">4 - Congruente Multiplicativo</label>
-            <label for="qtd-iteracoes">5 - Gerador de Atraso Fibonacci</label>
-         <input [(ngModel)]="qtdIteracoes" name="qtd-iteracoes" type="text" class="form-control" id="vertice-inicial">
           
-        </div>
           <div class="row ">
             <div class="col-lg-12">
-              <button (click)="aleatorioPoisson()" type="button" class=" botao btn btn-primary">Poisson Aleatório</button>
-            </div>
-            </div>
-          <div class="row ">
-            <div class="col-lg-12">
-              <button (click)="aleatorioTriangular()" type="button" class=" botao btn btn-primary">Triangular Aleatório</button>
+              <button (click)="poisson()" type="button" class=" botao btn btn-primary">Poisson Aleatório</button>
             </div>
             </div>
           <div class="row ">
             <div class="col-lg-12">
-              <button (click)="aleatoriioUniforme()" type="button" class=" botao btn btn-primary">Uniforme Aleatório</button>
+              <button (click)="triangular()" type="button" class=" botao btn btn-primary">Triangular Aleatório</button>
             </div>
             </div>
           <div class="row ">
             <div class="col-lg-12">
-              <button (click)="aleatorioNormal()" type="button" class=" botao btn btn-primary">Normal Aleatório</button>
+              <button (click)="uniforme()" type="button" class=" botao btn btn-primary">Uniforme Aleatório</button>
+            </div>
+            </div>
+          <div class="row ">
+            <div class="col-lg-12">
+              <button (click)="normal()" type="button" class=" botao btn btn-primary">Normal Aleatório</button>
             </div>
             </div>
         </div>

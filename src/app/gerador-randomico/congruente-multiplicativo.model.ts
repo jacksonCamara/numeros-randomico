@@ -15,6 +15,7 @@ export class CongruenteMultiplicativo {
             this.numeros.push(this.x);
             i--;
         } while (i > 0);
+        console.log(this.numeros);
         return this.numeros;
     }
 }
