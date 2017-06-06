@@ -37,7 +37,7 @@ export class GeradorRandomicoComponent implements OnInit {
 
   public poisson() {
     console.log("===================Gerador Aleatório Distribuição Poisson===================");
-    let poisson: Poisson = new Poisson();
+    let poisson: Poisson = new Poisson(this.qtdIteracoes);
 
 
   }

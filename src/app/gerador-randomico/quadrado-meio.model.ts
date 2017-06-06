@@ -12,7 +12,7 @@ export class QuadradoMeio {
                 this.x = Number (this.x.toString().slice(0,4));
                 this.x++;
             }
-            this.numeros.push(this.x % 100 + 1);
+            this.numeros.push(this.x % 6 + 1);
             
             i--;
         } while (i > 0);
