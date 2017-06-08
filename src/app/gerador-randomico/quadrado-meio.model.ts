@@ -9,14 +9,29 @@ export class QuadradoMeio {
         do {
             this.x = Math.pow(this.x, 2);
             if (this.x > 9999) {
-                this.x = Number (this.x.toString().slice(0,4));
+                this.x = Number(this.x.toString().slice(0, 4));
                 this.x++;
             }
-            this.numeros.push(this.x % 6 + 1);
-            
+            //this.numeros.push(this.x % 6 + 1);
+            this.numeros.push(1);
+            this.numeros.push(2);
+            this.numeros.push(3);
+
+
+            this.numeros.push(1);
+            this.numeros.push(2);
+            this.numeros.push(3);
+  
+
+            this.numeros.push(1);
+            this.numeros.push(2);
+            this.numeros.push(1);
+
+
+
+
             i--;
         } while (i > 0);
-        console.log(this.numeros);
         return this.numeros;
 
     }
