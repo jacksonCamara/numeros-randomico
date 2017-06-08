@@ -1,11 +1,17 @@
 
+
 export class Uniforme {
-    public esperados(observados: Array<number>): Array<number> {
-        let frequenciaEsp: Array<number> = new Array();
-        
+    public frequenciaEsperados(observados: Array<number>, numeroInicial, numeroFinal): Array<number> {
+        let esperados: Array<number> = new Array();
         observados.forEach(o => {
-            frequenciaEsp.push(1 / observados.length);
+            esperados.push(1 / observados.length);
+
         })
-        return frequenciaEsp;
+
+        for (let i = numeroInicial; i <= numeroFinal; i++) {
+            esperados.push(1 / (numeroFinal - numeroInicial + 1))
+        }
+
+        return esperados;
     }
 }

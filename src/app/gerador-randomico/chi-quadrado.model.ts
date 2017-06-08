@@ -17,9 +17,13 @@ export class ChiQuadrado {
 
     public executar() {
 
-        let frequenciaObs = this.util.frequenciaObservaveis(this.observados);
-        console.log(this.frequenciaEsp);
+        let frequenciaObservaveis = this.util.frequenciaObservaveis(this.observados, 1, 10);
+        let frequenciaObs = frequenciaObservaveis.map(f=>{
+            return f.frequencia;
+        })
         console.log(frequenciaObs);
+        console.log(this.frequenciaEsp)
+
 
         try {
             let acc = 0;

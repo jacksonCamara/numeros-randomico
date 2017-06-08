@@ -1,7 +1,61 @@
 export class Util {
-    public frequenciaObservaveis(observados: Array<number>): Array<number> {
-        let f: Array<FrequenciaObservaveis> = new Array();
-          let t: Array<FrequenciaObservaveis> = new Array();
+    public frequenciaObservaveis(observados: Array<number>, numeroInicial: number, numeroFinal: number): Array<FrequenciaObservaveis> {
+        let frequenciaObservaveis: Array<FrequenciaObservaveis> = new Array();
+        let frequenciaEsperado: Array<number> = this.frequenciaEsperados(observados, numeroInicial, numeroFinal);
+        for (let i = numeroInicial; i <= numeroFinal; i++) {
+            frequenciaObservaveis.push(new FrequenciaObservaveis(i))
+        }
+
+        let cont = 0;
+        frequenciaObservaveis.forEach(f => {
+            cont = 0;
+            observados.forEach(o => {
+                if (f.valor == o) {
+                    cont++;
+                }
+            })
+            f.qtdRepetido = cont;
+            f.frequencia = (cont * frequenciaEsperado[0]);
+        })
+        console.log(frequenciaObservaveis);
+
+        return frequenciaObservaveis;
+    }
+
+
+
+    private frequenciaEsperados(observados: Array<number>, numeroInicial, numeroFinal): Array<number> {
+        let esperados: Array<number> = new Array();
+
+        for (let i = numeroInicial; i <= numeroFinal; i++) {
+            esperados.push(1 / (numeroFinal - numeroInicial + 1))
+        }
+
+        return esperados;
+    }
+}
+
+export class FrequenciaObservaveis {
+    public valor: number;
+    public qtdRepetido: number;
+    public frequencia: number;
+
+    constructor(valor: number) {
+        this.valor = valor;
+    }
+
+
+}
+
+
+
+
+/*
+
+
+
+  let f: Array<FrequenciaObservaveis> = new Array();
+        let t: Array<FrequenciaObservaveis> = new Array();
         let qtd: number = 0;
         let cont: number = 0;
         let teste: number = 0;
@@ -15,9 +69,9 @@ export class Util {
                 }
             })
 
-             f.push(new FrequenciaObservaveis(valor, qtd, qtd * frequenciaEsperado / (observados.length)))
-               
-          
+            f.push(new FrequenciaObservaveis(valor, qtd, qtd * frequenciaEsperado / (observados.length)))
+
+
             t.forEach(a => {
                 if (valor != a.valor) {
                     teste++
@@ -29,45 +83,18 @@ export class Util {
             cont++;
             qtd = 0;
             teste = 0;
-          
+
         })
 
-        f = f.map(m =>{
-            return new FrequenciaObservaveis(m.valor, m.qtdRepetido,m.frequencia * t.length)
+        f = f.map(m => {
+            return new FrequenciaObservaveis(m.valor, m.qtdRepetido, m.frequencia * t.length)
         })
-   
-       
-        let frequenciaObs: Array<number> = f.map(a =>{
+
+
+        let frequenciaObs: Array<number> = f.map(a => {
             return a.frequencia;
         })
-        
+
         console.log("tamanho do t" + t.length)
         return frequenciaObs;
-    }
-
-
-
-    private frequenciaEsperados(observados: Array<number>): number {
-        let esperados: Array<number> = new Array();
-        observados.forEach(o => {
-            esperados.push(1 / observados.length);
-
-        })
-      
-        return esperados[0];
-    }
-}
-
-export class FrequenciaObservaveis {
-    public valor: number;
-    public qtdRepetido: number;
-    public frequencia: number;
-
-    constructor(valor: number, qtdRepetido: number, frequencia: number) {
-        this.valor = valor;
-        this.qtdRepetido = qtdRepetido;
-        this.frequencia = frequencia;
-    }
-
-
-}
+*/

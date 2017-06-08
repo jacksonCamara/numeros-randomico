@@ -55,7 +55,7 @@ export class GeradorRandomicoComponent implements OnInit {
     console.log("===================Gerador Aleatório Distribuição Uniforme===================");
     let uniforme: Uniforme = new Uniforme();
     this.esperados = new Array();
-    this.esperados = uniforme.esperados(this.numeros);
+    this.esperados = uniforme.frequenciaEsperados(this.numeros, 1, 10);
     this.chi = new ChiQuadrado(this.numeros, this.esperados);
   }
 
