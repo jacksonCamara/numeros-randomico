@@ -18,13 +18,14 @@ import { Normal } from './normal.model';
   styleUrls: ['./gerador-randomico.component.css']
 })
 export class GeradorRandomicoComponent implements OnInit {
-  public resultado: number = 0;
+  public resultado: number;
   public qtdIteracoes: number;
   public numeros: Array<number>;//observados
   public esperados: Array<number>
-  public valorInicial: number = 1;
-  public valorFinal: number = 10;
+  public valorInicial: number;
+  public valorFinal: number;
 
+////////////////////////////tem que colocar um retorno no qui quadrado executar para mostrar na variavel resultado
 
 
   public estatistica: Estatistica;
@@ -39,32 +40,33 @@ export class GeradorRandomicoComponent implements OnInit {
 
 
   public poisson() {
-    console.log("===================Gerador Aleatório Distribuição Poisson===================");
-    console.log(Math.pow(16 - 10, 2) / 3);
-    let poisson: Poisson = new Poisson(this.qtdIteracoes);
+    console.log("===================Poisson===================");
+    let poisson: Poisson = new Poisson(this.numeros, this.valorInicial, this.valorFinal);
+    this.esperados = poisson.frequenciaEsperados();
+    this.chi = new ChiQuadrado(this.numeros, this.esperados, this.valorInicial, this.valorFinal);
 
 
   }
 
   public triangular() {
-    console.log("===================Gerador Aleatório Distribuição Triangular===================");
-    let triangular: Triangular = new Triangular();
-    this.esperados = triangular.esperados(this.numeros);
+    console.log("===================Triangular===================");
+    let triangular: Triangular = new Triangular(this.numeros);
+    this.esperados = triangular.frequenciaEsperados();
     this.chi = new ChiQuadrado(this.numeros, this.esperados, this.valorInicial, this.valorFinal);
 
   }
 
   public uniforme() {
-    console.log("===================Gerador Aleatório Distribuição Uniforme===================");
+    console.log("===================Uniforme===================");
     let uniforme: Uniforme = new Uniforme();
     this.esperados = new Array();
 
     this.esperados = uniforme.frequenciaEsperados(this.numeros, this.valorInicial, this.valorFinal);
-     this.chi = new ChiQuadrado(this.numeros, this.esperados, this.valorInicial, this.valorFinal);
+    this.chi = new ChiQuadrado(this.numeros, this.esperados, this.valorInicial, this.valorFinal);
   }
 
   public normal() {
-    console.log("===================Gerador Aleatório Distribuição Normal===================");
+    console.log("===================Normal===================");
     let normal: Normal = new Normal();
     normal.esperados(this.numeros);
     this.esperados = normal.esperados(this.numeros);
@@ -75,7 +77,7 @@ export class GeradorRandomicoComponent implements OnInit {
 
   public chiQuadrado() {
     console.log("===================Chi-Quadrado===================");
-      this.chi.executar();
+    this.chi.executar();
   }
 
   public quadradoMeio(): void {
@@ -124,18 +126,5 @@ export class GeradorRandomicoComponent implements OnInit {
     let multiplicativo: MultiplicativoImplementado = new MultiplicativoImplementado();
     this.numeros = multiplicativo.executar(this.qtdIteracoes, x, y);
 
-
-
-    /*
-        let xPos = x.clientX;     // Get the horizontal coordinate
-        // let yPos: number = y.clientY();     // Get the vertical coordinate
-        var coor = "X coords: " + xPos + ", Y coords: ";
-        console.log(coor);
-        //multiplicativo.executar(this.qtdIteracoes);
-        */
   }
-
-
-
-
 }

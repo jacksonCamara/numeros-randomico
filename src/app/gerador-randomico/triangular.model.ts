@@ -1,19 +1,24 @@
 import * as Simple from 'simple-statistics'; //https://simplestatistics.org/docs/
+
 export class Triangular {
-    public esperados(observados: Array<number>) {
+    private observados: Array<number>;
+    constructor(observados: Array<number>){
+        this.observados = observados;
+    }
+    public frequenciaEsperados() {
         let esperados: Array<number> = new Array();
         let minima: number;
         let maxima: number;
         let moda: number;
         let aux: number;
-        moda = Simple.mode(observados);
+        moda = Simple.mode(this.observados);
         console.log("moda: " + moda);
-        minima = Simple.min(observados);
+        minima = Simple.min(this.observados);
         console.log("min: " + minima);
-        maxima = Simple.max(observados);
+        maxima = Simple.max(this.observados);
         console.log("max: " + maxima);
 
-        observados.forEach(o => {
+        this.observados.forEach(o => {
             if (minima == o) {
                 if (o - minima != 0) {
                     esperados.push(2 * ((o - minima) / ((maxima - minima) * (moda - minima))))

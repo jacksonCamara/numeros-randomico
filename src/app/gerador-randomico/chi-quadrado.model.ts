@@ -25,7 +25,9 @@ export class ChiQuadrado {
         let frequenciaObs = frequenciaObservaveis.map(f=>{
             return f.frequencia;
         })
+        console.log("Frequencia Observaveis")
         console.log(frequenciaObs);
+        console.log("Frequencia Esperado")
         console.log(this.frequenciaEsp)
 
 
@@ -34,9 +36,6 @@ export class ChiQuadrado {
             for (let i = 0; i < frequenciaObs.length; i++) {
                 //Professore => Precisa calcular o zero referente aos numeros não ocorridos
                 acc += Math.pow(frequenciaObs[i] - this.frequenciaEsp[i], 2) / this.frequenciaEsp[i];
-                // console.log("frequencia obs" + frequenciaObs[i] )
-                // console.log("frequencia esp" + this.frequenciaEsp[i] )
-
             }
             console.log("acc" + acc)
             return acc;
