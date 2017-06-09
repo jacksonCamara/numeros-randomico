@@ -25,9 +25,6 @@ export class GeradorRandomicoComponent implements OnInit {
   public valorInicial: number;
   public valorFinal: number;
 
-////////////////////////////tem que colocar um retorno no qui quadrado executar para mostrar na variavel resultado
-
-
   public estatistica: Estatistica;
   public chi: ChiQuadrado;
 
@@ -68,8 +65,8 @@ export class GeradorRandomicoComponent implements OnInit {
   public normal() {
     console.log("===================Normal===================");
     let normal: Normal = new Normal();
-    normal.esperados(this.numeros);
-    this.esperados = normal.esperados(this.numeros);
+    normal.frequenciaEsperados(this.numeros);
+    this.esperados = normal.frequenciaEsperados(this.numeros);
     this.chi = new ChiQuadrado(this.numeros, this.esperados, this.valorInicial, this.valorFinal);
 
   }

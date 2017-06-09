@@ -103,25 +103,25 @@ export class QuadradoMeio {
             this.numeros.push(10);
             //9
             this.numeros.push(1);
-            this.numeros.push(2);
+            this.numeros.push(1);
             this.numeros.push(3);
             this.numeros.push(4);
             this.numeros.push(5);
             this.numeros.push(6);
             this.numeros.push(7);
             this.numeros.push(8);
-            this.numeros.push(9);
+            this.numeros.push(8);
             this.numeros.push(10);
             //10
             this.numeros.push(1);
-            this.numeros.push(2);
+            this.numeros.push(1);
             this.numeros.push(3);
             this.numeros.push(4);
             this.numeros.push(5);
             this.numeros.push(6);
             this.numeros.push(7);
             this.numeros.push(8);
-            this.numeros.push(9);
+            this.numeros.push(8);
             this.numeros.push(10);
 
             i--;

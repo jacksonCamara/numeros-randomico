@@ -5,7 +5,7 @@ export class Normal{
 
     }
 
-    public esperados(observados: Array<number>){
+    public frequenciaEsperados(observados: Array<number>){
         let esperados: Array<number> = new Array();
         let media, desvioPadrao, resultado: number;
         console.log(Simple)

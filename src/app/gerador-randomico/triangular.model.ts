@@ -1,4 +1,5 @@
 import * as Simple from 'simple-statistics'; //https://simplestatistics.org/docs/
+import {Util} from './util.model';
 
 export class Triangular {
     private observados: Array<number>;
@@ -9,15 +10,18 @@ export class Triangular {
         let esperados: Array<number> = new Array();
         let minima: number;
         let maxima: number;
-        let moda: number;
+        let moda: Array<number>;
         let aux: number;
-        moda = Simple.mode(this.observados);
+        let util:Util = new Util();
+        //moda = Simple.mode(this.observados);
+        moda = util.moda(this.observados);
+
         console.log("moda: " + moda);
         minima = Simple.min(this.observados);
         console.log("min: " + minima);
         maxima = Simple.max(this.observados);
         console.log("max: " + maxima);
-
+/*
         this.observados.forEach(o => {
             if (minima == o) {
                 if (o - minima != 0) {
@@ -38,6 +42,9 @@ export class Triangular {
                 esperados.push(0.000000000000001)
             }
         })
-        return esperados;
+     
+          */
+             return esperados;
     }
+  
 }
