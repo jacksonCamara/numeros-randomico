@@ -9,15 +9,19 @@ export class ChiQuadrado {
     public frequenciaEsp: Array<number> = new Array();
     public reducaoGrauLiberdade: number = 1;
     private util: Util = new Util();
+    private valorInicial: number;
+    private valorFinal: number;
 
-    constructor(observados: Array<number>, frequenciaEsp: Array<number>) {
+    constructor(observados: Array<number>, frequenciaEsp: Array<number>, valorInicial: number, valorFinal: number) {
         this.observados = observados;
         this.frequenciaEsp = frequenciaEsp;
+        this.valorInicial = valorInicial;
+        this.valorFinal = valorFinal
     }
 
     public executar() {
 
-        let frequenciaObservaveis = this.util.frequenciaObservaveis(this.observados, 1, 10);
+        let frequenciaObservaveis = this.util.frequenciaObservaveis(this.observados, this.valorInicial, this.valorFinal);
         let frequenciaObs = frequenciaObservaveis.map(f=>{
             return f.frequencia;
         })

@@ -13,117 +13,122 @@ export class QuadradoMeio {
                 this.x++;
             }
             //this.numeros.push(this.x % 6 + 1);
+            //1
             this.numeros.push(1);
-            this.numeros.push(2);
-            this.numeros.push(3);
+            this.numeros.push(9);
+            this.numeros.push(9);
             this.numeros.push(4);
             this.numeros.push(5);
             this.numeros.push(6);
             this.numeros.push(7);
             this.numeros.push(8);
             this.numeros.push(9);
+            this.numeros.push(9);
+            //2
             this.numeros.push(1);
-
-            this.numeros.push(1);
-            this.numeros.push(2);
-            this.numeros.push(3);
+            this.numeros.push(9);
+            this.numeros.push(9);
             this.numeros.push(4);
             this.numeros.push(5);
             this.numeros.push(6);
             this.numeros.push(7);
             this.numeros.push(8);
             this.numeros.push(9);
+            this.numeros.push(9);
+            //3
             this.numeros.push(1);
-
-            this.numeros.push(1);
-            this.numeros.push(2);
-            this.numeros.push(3);
+            this.numeros.push(9);
+            this.numeros.push(9);
             this.numeros.push(4);
             this.numeros.push(5);
             this.numeros.push(6);
             this.numeros.push(7);
             this.numeros.push(8);
             this.numeros.push(9);
+            this.numeros.push(9);
+            //4
             this.numeros.push(1);
-
-            this.numeros.push(1);
-            this.numeros.push(2);
-            this.numeros.push(3);
+            this.numeros.push(9);
+            this.numeros.push(9);
             this.numeros.push(4);
             this.numeros.push(5);
             this.numeros.push(6);
             this.numeros.push(7);
             this.numeros.push(8);
             this.numeros.push(9);
+            this.numeros.push(9);
+            //5
             this.numeros.push(1);
-
-            this.numeros.push(1);
-            this.numeros.push(2);
-            this.numeros.push(3);
+            this.numeros.push(9);
+            this.numeros.push(9);
             this.numeros.push(4);
             this.numeros.push(5);
             this.numeros.push(6);
             this.numeros.push(7);
             this.numeros.push(8);
             this.numeros.push(9);
+            this.numeros.push(9);
+            //6
             this.numeros.push(1);
-
-            this.numeros.push(1);
-            this.numeros.push(2);
-            this.numeros.push(3);
-            this.numeros.push(4);
+            this.numeros.push(9);
+            this.numeros.push(9);
+            this.numeros.push(9);
             this.numeros.push(5);
             this.numeros.push(6);
             this.numeros.push(7);
             this.numeros.push(8);
             this.numeros.push(9);
+            this.numeros.push(9);
+            //7
             this.numeros.push(1);
-
-            this.numeros.push(1);
-            this.numeros.push(2);
-            this.numeros.push(3);
-            this.numeros.push(4);
+            this.numeros.push(9);
+            this.numeros.push(9);
+            this.numeros.push(9);
             this.numeros.push(5);
             this.numeros.push(6);
             this.numeros.push(7);
             this.numeros.push(8);
             this.numeros.push(9);
+            this.numeros.push(9);
+            //8
             this.numeros.push(1);
-
-            this.numeros.push(1);
-            this.numeros.push(2);
-            this.numeros.push(3);
-            this.numeros.push(4);
+            this.numeros.push(9);
+            this.numeros.push(9);
+            this.numeros.push(9);
             this.numeros.push(5);
             this.numeros.push(6);
             this.numeros.push(7);
             this.numeros.push(8);
             this.numeros.push(9);
+            this.numeros.push(9);
+            //9
             this.numeros.push(1);
-
-            this.numeros.push(1);
-            this.numeros.push(2);
-            this.numeros.push(3);
-            this.numeros.push(4);
+            this.numeros.push(9);
+            this.numeros.push(9);
+            this.numeros.push(9);
             this.numeros.push(5);
             this.numeros.push(6);
             this.numeros.push(7);
             this.numeros.push(8);
             this.numeros.push(9);
+            this.numeros.push(9);
+            //10
             this.numeros.push(1);
-
-            this.numeros.push(1);
-            this.numeros.push(2);
-            this.numeros.push(3);
-            this.numeros.push(4);
+            this.numeros.push(9);
+            this.numeros.push(9);
+            this.numeros.push(9);
             this.numeros.push(5);
             this.numeros.push(6);
             this.numeros.push(7);
             this.numeros.push(8);
             this.numeros.push(9);
-            this.numeros.push(1);
+            this.numeros.push(9);
 
-
+            this.numeros.push(9);
+            this.numeros.push(9);
+            this.numeros.push(9);
+            this.numeros.push(9);
+            this.numeros.push(9);
 
             i--;
         } while (i > 0);

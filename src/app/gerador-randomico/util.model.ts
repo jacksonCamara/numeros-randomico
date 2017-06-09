@@ -15,7 +15,7 @@ export class Util {
                 }
             })
             f.qtdRepetido = cont;
-            f.frequencia = (cont * frequenciaEsperado[0]);
+            f.frequencia = (cont * frequenciaEsperado[0]/(numeroFinal - numeroInicial + 1));
         })
         console.log(frequenciaObservaveis);
 
@@ -28,6 +28,7 @@ export class Util {
         let esperados: Array<number> = new Array();
 
         for (let i = numeroInicial; i <= numeroFinal; i++) {
+            console.log(i)
             esperados.push(1 / (numeroFinal - numeroInicial + 1))
         }
 

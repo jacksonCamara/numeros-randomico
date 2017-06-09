@@ -22,6 +22,9 @@ export class GeradorRandomicoComponent implements OnInit {
   public qtdIteracoes: number;
   public numeros: Array<number>;//observados
   public esperados: Array<number>
+  public valorInicial: number = 1;
+  public valorFinal: number = 10;
+
 
 
   public estatistica: Estatistica;
@@ -47,7 +50,7 @@ export class GeradorRandomicoComponent implements OnInit {
     console.log("===================Gerador Aleatório Distribuição Triangular===================");
     let triangular: Triangular = new Triangular();
     this.esperados = triangular.esperados(this.numeros);
-    this.chi = new ChiQuadrado(this.numeros, this.esperados);; 
+    this.chi = new ChiQuadrado(this.numeros, this.esperados, this.valorInicial, this.valorFinal);
 
   }
 
@@ -55,8 +58,9 @@ export class GeradorRandomicoComponent implements OnInit {
     console.log("===================Gerador Aleatório Distribuição Uniforme===================");
     let uniforme: Uniforme = new Uniforme();
     this.esperados = new Array();
-    this.esperados = uniforme.frequenciaEsperados(this.numeros, 1, 10);
-    this.chi = new ChiQuadrado(this.numeros, this.esperados);
+
+    this.esperados = uniforme.frequenciaEsperados(this.numeros, this.valorInicial, this.valorFinal);
+     this.chi = new ChiQuadrado(this.numeros, this.esperados, this.valorInicial, this.valorFinal);
   }
 
   public normal() {
@@ -64,7 +68,7 @@ export class GeradorRandomicoComponent implements OnInit {
     let normal: Normal = new Normal();
     normal.esperados(this.numeros);
     this.esperados = normal.esperados(this.numeros);
-    this.chi = new ChiQuadrado(this.numeros, this.esperados);; 
+    this.chi = new ChiQuadrado(this.numeros, this.esperados, this.valorInicial, this.valorFinal);
 
   }
 
