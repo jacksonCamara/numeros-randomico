@@ -77,7 +77,7 @@ export class GeradorRandomicoComponent implements OnInit {
 
   public chiQuadrado() {
     console.log("===================Chi-Quadrado===================");
-    this.chi.executar();
+    this.resultado = this.chi.executar();
   }
 
   public quadradoMeio(): void {

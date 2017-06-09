@@ -34,7 +34,6 @@ export class ChiQuadrado {
         try {
             let acc = 0;
             for (let i = 0; i < frequenciaObs.length; i++) {
-                //Professore => Precisa calcular o zero referente aos numeros não ocorridos
                 acc += Math.pow(frequenciaObs[i] - this.frequenciaEsp[i], 2) / this.frequenciaEsp[i];
             }
             console.log("acc" + acc)
